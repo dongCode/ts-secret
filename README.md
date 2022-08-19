@@ -1,1 +1,1 @@
-# TypeScript 通关秘籍
+# TypeScript 一问一答
