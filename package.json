@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compiler": "tsc src/index.ts"
+    "compiler": "tsc src/index.ts",
+    "auto": "tsc --watch"
   },
   "keywords": [],
   "author": "",
