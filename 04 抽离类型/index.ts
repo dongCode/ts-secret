@@ -20,4 +20,3 @@ type TPerson = {
   age: number;
 };
 
-export {};

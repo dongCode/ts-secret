@@ -6,6 +6,6 @@ let num: number = 1
 let bol: boolean = false
 
 // es3 不支持
-// let sym: symbol = Symbol('sym')
-// let bigInt: bigint = 23n
+let sym: symbol = Symbol('sym')
+let bigInt: bigint = 23n
 
