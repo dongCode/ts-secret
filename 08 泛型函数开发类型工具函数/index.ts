@@ -1,6 +1,7 @@
-// keyof type operator
 
 {
+  // keyof type operator
+
   type TwoD = { x: number; y: number };
   type XorY = keyof TwoD;
 
@@ -29,12 +30,15 @@
 
 {
   // mapped types
-  
   type MapType = {
     [key: string]: string | boolean
   }
   
-  const OnlyStrAndBol: MapType = {
+  type MapGeneric<NeedType> = {
+    [key: string]: NeedType
+  }
+  
+  const OnlyStrAndBol: MapGeneric<string | boolean> = {
     name: 'jack',
     young: true,
     age: 11 // Error
@@ -52,17 +56,53 @@
     x: false,
     y: 1,
   }
+
 }
 
+{
+   // typeof type operator
+   // 两种基本用法
+   var x = 5;
+   // 用在表达式中,返回 ‘number’ 字符串，即JS中的用法
+   var y = typeof x; // Use in an expression
+   // 用在类型提取中，即TS拓展的类型语法
+   var z: typeof x; // Use in a type query
 
-// Mapped Types
-// 规定一个对象所有键值的类型
-type MapType = {
-  [key: string]: string | boolean;
-};
 
-const OnlyStrAndBol: MapType = {
-  name: "jack",
-  young: true,
-  age: 11, // Error
-};
+   let c: typeof c
+
+   // 递归类型
+   var d: { a: typeof d}
+   var h: () => typeof h;
+
+   // 类型守卫
+   function isLongStr(param: any) {
+    return typeof param === 'string' && str.length > 100
+  }
+   function processNum (param: number | (() => number)) {
+      const num = typeof param === 'number' ? param : param()
+      return num.toFixed(1)
+   }
+   function numOrStr(param: number | string) {
+     if(typeof param === 'number') {
+       return param.toFixed(1)
+     } else {
+       return param.length
+     }
+   }
+}
+
+{
+  type P =  {
+    x: number,
+    y: string
+  }
+
+  type P2 = Partial<P>
+
+  type PGeneric<Type> = {
+    [Key in keyof Type]?: Type[Key]
+  }
+
+  type P3 = PGeneric<P>
+}
