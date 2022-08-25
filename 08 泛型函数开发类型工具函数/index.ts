@@ -127,14 +127,15 @@
 }
 
 {
+  // Record
   interface CatInfo {
     age: number;
     breed: string;
   }
 
-  type CatName = "miffy" | "boris" | "mordred";
+  type CatKeys = "miffy" | "boris" | "mordred";
 
-  const cats: Record<CatName, CatInfo> = {
+  const cats: Record<CatKeys, CatInfo> = {
     miffy: { age: 10, breed: "Persian" },
     boris: { age: 5, breed: "Maine Coon" },
     mordred: { age: 16, breed: "British Shorthair" },
