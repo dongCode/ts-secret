@@ -21,7 +21,7 @@
   class Circle extends Shape {}
   function createShape(kind: string): Shape {
     if (kind === "circle") return new Circle();
-    return new Shape()
+    return new Shape();
   }
   var circle = <Circle>createShape("circle"); // circle
 }
@@ -59,14 +59,12 @@
 }
 
 {
-  interface CompilerOptions {
-    strict?: boolean;
-    sourcePath?: string;
-    targetPath?: string;
+
+  function handler(event: Event) {
+    let element = event as string;
   }
-  var options: CompilerOptions = {
-    strict: true,
-    sourcepath: "./src", // Error, excess or misspelled property
-    targetpath: "./bin", // Error, excess or misspelled property
-  };
+
+  function handler2(event: Event) {
+    let element = event as any as string;
+  }
 }
